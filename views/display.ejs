@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: white;">
+    <div style="background-color:  #FF9149; padding-bottom: 0px;">
+        <%- include("partials/header.ejs") %>
+    </div>
+    <div class="container">
+        <div class="row align-items-md-center border-bottom" style="--bs-border-color: #FF9149; padding-top: 10px;">
+            <div class="col d-flex flex-column align-items-start gap-2" style="color: #FF9149;">
+                <h2 class="fw-bold" style="color: #FF9149;">
+                    Embracing Failure: The Hidden Key to Success.
+                </h2>
+                <p style="color: #f89d61;">
+                    We often view failure as the end of the road, but in reality, it’s a stepping stone to growth. Every misstep teaches us something valuable — about our goals, our resilience, and our path forward. Some of the greatest minds in history, from Thomas Edison to J.K. Rowling, faced repeated failures before achieving success. The difference? They didn’t stop trying. Embracing failure means embracing the lessons that come with it. So next time you fall short, remember: it’s not the end — it’s a chance to begin again, stronger and wiser.              
+                </p>
+            </div>
+        </div>    
+    </div>
+    <div class="container">
+        <div class="row align-items-md-center border-bottom" style="--bs-border-color: #FF9149; padding-top: 10px;">
+            <div class="col d-flex flex-column align-items-start gap-2" style="color: #FF9149;">
+                <h2 class="fw-bold" style="color: #FF9149;">
+                    Digital Minimalism: Reclaiming Your Focus in a Noisy World
+                </h2>
+                <p style="color: #f89d61;">
+                    In an age of constant notifications and endless scrolling, our attention has become fragmented. Digital minimalism encourages us to be intentional with technology — using it as a tool, not a distraction. Try setting limits, turning off non-essential notifications, and spending time offline. You'll be amazed at how much clarity, focus, and peace it brings into your life.                
+                </p>
+            </div>
+        </div>    
+    </div>
+    <% if(locals.len!=0) { %>
+        <div class="container">
+            <% for(var i=0; i<locals.len; i++){ %>
+                <div class="row align-items-md-center border-bottom" style="--bs-border-color: #FF9149; padding-top: 10px;">
+                    <div class="col d-flex flex-column align-items-start gap-2" style="color: #FF9149;">
+                        <h2 class="fw-bold" style="color: #FF9149;">
+                            <%= locals.allBlogsTitle[i] %>
+                        </h2>
+                        <p style="color: #f89d61;">
+                            <%= locals.allBlogsPara[i] %>
+                        </p>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    <% } %>
+</body>
+</html>
